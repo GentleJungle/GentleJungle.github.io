@@ -30,15 +30,15 @@ jQuery(function($) {'use strict';
 		}
 
 		var $portfolio_selectors = $('.portfolio-filter >li>a');
-		
+
 		if($portfolio_selectors.length) {
-			
+
 			var $portfolio = $('.portfolio-items');
 			$portfolio.isotope({
 				itemSelector : '.portfolio-item',
 				layoutMode : 'fitRows'
 			});
-			
+
 			$portfolio_selectors.on('click', function(){
 				$portfolio_selectors.removeClass('active');
 				$(this).addClass('active');
@@ -57,7 +57,7 @@ jQuery(function($) {'use strict';
 		options = $.extend({}, options || {}, $this.data('countToOptions') || {});
 		$this.countTo(options);
 	}
-		
+
 	// Search
 	$('.fa-search').on('click', function() {
 		$('.field-toggle').fadeToggle(200);
@@ -84,13 +84,20 @@ jQuery(function($) {'use strict';
 	});
 
 	if( $('#gmap').length ) {
-		var map;
+		var map, marker;
+
+		// var info = {
+		// 	content: '<h4><b>Gentle Jungle</b></h4> <h5>Pet Store</h5>',
+		// }
+		var info = new google.maps.InfoWindow({
+			content: '<h4><b>Gentle Jungle</b> pet store</h4>',
+		});
 
 		map = new GMaps({
 			el: '#gmap',
-			lat: 43.04446,
-			lng: -76.130791,
-			scrollwheel:false,
+			lat: 41.551472,
+			lng: -72.807305,
+			scrollwheel:true,
 			zoom: 16,
 			zoomControl : false,
 			panControl : false,
@@ -100,14 +107,18 @@ jQuery(function($) {'use strict';
 			clickable: false
 		});
 
-		map.addMarker({
-			lat: 43.04446,
-			lng: -76.130791,
+		marker = map.createMarker({
+			lat: 41.551472,
+			lng: -72.807305,
 			animation: google.maps.Animation.DROP,
 			verticalAlign: 'bottom',
 			horizontalAlign: 'center',
 			backgroundColor: '#3e8bff',
+			infoWindow: info,
 		});
+
+		map.addMarker(marker);
+		info.open(map, marker);
 	}
 
 });

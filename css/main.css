@@ -271,7 +271,7 @@
 }
 
 #header .navbar-nav.navbar-right >li:last-child{
-  margin-right: 20px;
+  /*margin-right: 20px;*/
 }
 
 #header .navbar-nav.navbar-right >li a {
@@ -423,7 +423,7 @@ ul.sub-menu {
 
 .testimonial .media{
   margin-top: 0;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .testimonial .media>.pull-left{
@@ -650,6 +650,7 @@ ul.sub-menu {
   display: table;
   position: static;
   width: 100%;
+  background-size: 11%;
 }
 
 .vertical-center{
@@ -758,6 +759,7 @@ ul.sub-menu {
   display: table;
   position: static;
   width: 100%;
+  background-size: 120px;
 }
 
 #team {
@@ -1014,11 +1016,16 @@ ul.elements li > i{
 }
 
 .portfolio-thumb {
-  position: relative;
+    /*whatever set width */
+  height: 269px;
+  width: 261px;
+  overflow: hidden;
 }
 
 .portfolio-thumb img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
@@ -1934,7 +1941,7 @@ span.stButton_gradient,
 }
 
 #gmap {
-  height: 350px;
+  height: 270px;
 }
 
 .get-in-touch img {
@@ -1966,15 +1973,6 @@ span.stButton_gradient,
 
 #map-section address a:hover {
   color:#00AEEF
-}
-
-#contact-form #message{
-  resize:none;
-}
-
-#contact-form .btn-submit {
-  width: 28%;
-  margin: 5px auto;
 }
 
 .corporate-info .corporate-address {
@@ -2745,4 +2743,48 @@ span.stButton_gradient,
 
 .margin-top {
   margin-top: 30px;
+}
+
+.kitten-kid {
+  width: 510px;
+}
+
+.commentBy {
+  color: #ea2c00;
+}
+
+.puppy-card {
+  height: 360px;
+  width: 300px;
+  border: solid 1px #AAAAAA;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.puppy-img {
+  height: 275px;
+  width: 275px;
+}
+
+.fa-heart {
+  color: #F25F5C;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.spinner {
+  font-size: 40px;
+}
+.spinner-wrapper {
+  width:40px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
