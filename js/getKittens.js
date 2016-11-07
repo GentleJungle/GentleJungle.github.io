@@ -1,6 +1,6 @@
 var app = angular.module('getKittensImages', []);
 
-var ACCESS_TOKEN = '1518439702.8c2ef96.dcbd60a7758b4337ad1048bfedf62f27';
+var ACCESS_TOKEN = '1518439702.8c2ef96.dcbd60a7758b4337ad1048bfedf62f27'; // public content scope required
 var FEED_NUMBER = 30;
 
 function selectKittens(feed) {

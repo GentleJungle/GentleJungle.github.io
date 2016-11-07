@@ -1,6 +1,6 @@
 var app = angular.module('getPuppiesImages', []);
 
-var ACCESS_TOKEN = '1518439702.8c2ef96.dcbd60a7758b4337ad1048bfedf62f27';
+var ACCESS_TOKEN = '1518439702.1677ed0.9dac48d4464f43cf890c3273f37b79ae'; // basic scope access token required
 var FEED_NUMBER = 20;
 
 function selectPuppies(feed) {
@@ -27,6 +27,7 @@ app.controller('getImageCtlr', function($scope, $q, $log) {
 					if (message.meta.code != 200) {
 						reject( message.meta.error_message )
 					} else {
+						$log.log(message)
 						resolve( message )
 					}
 				}
@@ -68,6 +69,7 @@ app.controller('getImageCtlr', function($scope, $q, $log) {
 					var puppies = message.data.filter(selectPuppies)
 					$scope.puppies = puppies
 					storage.push(puppies)
+					$log.log(storage)
 					nextUrl = message.pagination.next_url
 				},
 				function(error) {
