@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Available Puppies | Gentle Jungle</title>
+    <title>Available Kitten | Gentle Jungle</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.css" rel="stylesheet">
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
-<body ng-app="getPuppiesImages">
+<body ng-app="getKittensImages">
 	<header id="header">
         <div class="container">
             <div class="row">
@@ -69,8 +69,8 @@
                         </li>
                         <li class="dropdown active"><a href="#">Available Pets<i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a class="active" href="availablePuppies.html">Available Puppies</a></li>
-                                <li><a href="availableKittens.html">Available Kittens</a></li>
+                                <li><a href="availablePuppies.html">Available Puppies</a></li>
+                                <li><a class="active" href="availableKittens.html">Available Kittens</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="FAQ.html">Help<i class="fa fa-angle-down"></i></a>
@@ -93,8 +93,8 @@
                 <div class="row">
                     <div class="action">
                         <div class="col-sm-12">
-                            <h1 class="title">Available Puppies</h1>
-                            <p>Enjoy our gallery of adorable and available puppies!</p>
+                            <h1 class="title">Available Kittens</h1>
+                            <p>Enjoy our gallery of adorable and available kittens!</p>
                         </div>
                     </div>
                 </div>
@@ -112,15 +112,15 @@
                     </div>
                 </div>
                 <div class="hidden" id="errorMessage"><h4>{{ errorMessage }}</h4></div>
-                <div class="portfolio-items hidden" id="puppies">
-                    <div ng-repeat="puppy in puppies" class="col-xs-12 col-sm-6 col-md-4 portfolio-item branded logos">
+                <div class="portfolio-items hidden" id="kittens">
+                    <div ng-repeat="kitten in kittens" class="col-xs-12 col-sm-6 col-md-4 portfolio-item branded logos">
                         <div class="card puppy-card">
-                            <a href="{{ puppy.link }}">
-                                <img ng-src="{{ puppy.images.standard_resolution.url }}" class="card-img-top puppy-img" alt="">
+                            <a href="{{ kitten.link }}">
+                                <img ng-src="{{ kitten.images.standard_resolution.url }}" class="card-img-top img-responsive" alt="">
                             </a>
                             <div class="card-block">
-                                <p><i class="fa fa-heart"></i>{{ puppy.likes.count }}</p>
-                                <p class="card-text">{{ puppy.caption.text }}</p>
+                                <p><i class="fa fa-heart"></i>{{ kitten.likes.count }}</p>
+                                <p class="card-text">{{ kitten.caption.text }}</p>
                             </div>
                         </div>
                     </div>
@@ -212,6 +212,6 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDh9C7bAWMuSjLd9yrW_92_0-jRvs8XQCg"></script>
     <script type="text/javascript" src="js/gmaps.js"></script>
-    <script type="text/javascript" src="js/getPuppies.js"></script>
+    <script type="text/javascript" src="js/getKittens.js"></script>
 </body>
 </html>

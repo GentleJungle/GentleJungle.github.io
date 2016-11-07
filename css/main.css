@@ -17,13 +17,13 @@
 
 
   a{
-    color:#C03035;
+    color:#F0871E;
   }
 
   a:hover {
     outline: none;
     text-decoration:none;
-    color:#4fcccd;
+    color:#F0BB1E;
   }
 
   a:focus {
@@ -1995,8 +1995,8 @@ Portfolio Details
 }
 
 .puppy-img {
-  height: 275px;
-  width: 275px;
+  height: 298px;
+  width: 298px;
 }
 
 .fa-heart {
@@ -2019,4 +2019,10 @@ Portfolio Details
   height: 40px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.not-active {
+   pointer-events: none;
+   cursor: default;
+   color: #ddd;
 }
