@@ -2026,3 +2026,7 @@ Portfolio Details
    cursor: default;
    color: #ddd;
 }
+
+p, h1, h2, h3, address {
+  font-weight: 400;
+}
