@@ -1,7 +1,17 @@
-var app = angular.module('getPuppiesImages', []);
+var app = angular.module('getPuppiesImages', ['$scope', '$http', function ($scope, $http));
 
 var ACCESS_TOKEN = '1518439702.1677ed0.9dac48d4464f43cf890c3273f37b79ae'; // basic scope access token required
 var FEED_NUMBER = 20;
+
+var URL = 'https://docs.google.com/spreadsheets/d/15St6mqHfH7ghGtFs4ze8-WFr0h7ZXjc5CUWUCQ4OoOU/od6/public/values?alt=json';
+var MAPPINGS = {
+	1: 'Timestamp',
+	2: 'Name',
+	3: 'Purchase',
+	4: 'Picture',
+	5: 'Agree',
+	6: 'Review'
+}
 
 function selectPuppies(feed) {
 	for (var i in feed.tags) {
@@ -12,6 +22,32 @@ function selectPuppies(feed) {
 }
 
 app.controller('getImageCtlr', function($scope, $q, $log) {
+
+
+	var load_reviews = function () {
+	  $http.get(URL).then(function (resp) {
+	    $scope.reviews= [];
+
+	    var flatData= response.data.feed.entry;
+	    var prevDate = null, ordercount = 0;
+
+	    for(var i = 0 ; i<flatData.length; i++){
+	      var cell= flatData[i]['gs$cell'];
+
+	      if(cell['row'] === '1'){
+	        continue;
+	      }
+
+	      if(cell['row'] === '1'){
+	        $scope.reviews.push({});
+	      }
+
+	    }
+
+	    console.log(reviews);
+
+	  });
+	}
 
 	var nextUrl, pageNumber
 	var storage = [] //store all the feeds received, so no need to ask for the same feeds again when hit prev or next
@@ -85,4 +121,7 @@ app.controller('getImageCtlr', function($scope, $q, $log) {
 		if (pageNumber === 0)
 			$('#prev').addClass('not-active')
 	}
+
+	load_reviews();
+
 });
