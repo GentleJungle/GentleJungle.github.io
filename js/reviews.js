@@ -8,7 +8,8 @@ app.controller('ReviewsCtrl', ['$scope', '$http', function ($scope, $http) {
         3: 'Purchase',
         4: 'Picture',
         5: 'Agree',
-        6: 'Review'
+        6: 'Review',
+        7: 'ImageURL'
     }
 
     var load_reviews = function () {
@@ -51,6 +52,7 @@ app.controller('ReviewsCtrl', ['$scope', '$http', function ($scope, $http) {
 
         });
     }
+
     load_reviews();
 
 }]);
