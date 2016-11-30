@@ -2031,6 +2031,12 @@ p, h1, h2, h3, address {
   font-weight: 400;
 }
 
-.testimonial-img{
+.testimonial-img {
   max-height: 300px;
 }
+
+.social-icon {
+  font-size: 18px;
+  padding: 0 5px;
+}
+
