@@ -10,6 +10,15 @@ jQuery(function($) {'use strict';
 		});
 	});
 
+	$('li.dropdown').find('.sm-dropdown').each(function(){
+		$(this).on('click', function(){
+			if( $(window).width() < 768 ) {
+				$(this).next().slideToggle();
+			}
+			return false;
+		});
+	});
+
 	//Fit Vids
 	if( $('#video-container').length ) {
 		$("#video-container").fitVids();
